@@ -35,6 +35,7 @@ public class MainProject {
 		Scanner scanner = new Scanner(System.in);
 
 		int k = 0;
+		int size = arrayList.size();
 		while (k != 1) {
 			System.out.println();
 			System.out.println("Welcome to Music Player!");
@@ -109,6 +110,7 @@ public class MainProject {
 				}
 				if (flag == 1)
 					System.out.println("The Song ID " + (x + 1) + " is the Key to play this Song");
+			
 				else
 					System.out.println("No song with " + d + " is found");
 				break;
@@ -144,7 +146,7 @@ public class MainProject {
 				case "A": {
 					int songID;
 					String songTitle, artistName, albumName, songLocation, description;
-					songID = arrayList.size() + 1;
+					size = size + 1;
 					System.out.println("Enter the Song Title:");
 					scanner.nextLine();
 					songTitle = scanner.nextLine();
@@ -160,7 +162,7 @@ public class MainProject {
 					System.out.println("Enter the Description:");
 					description = scanner.nextLine();
 					scanner.nextLine();
-					arrayList.add(new Song(songID, songTitle, artistName, albumName, songLocation, description));
+					arrayList.add(new Song(size, songTitle, artistName, albumName, songLocation, description));
 					System.out.println("New Song is Added as" + arrayList.get(arrayList.size() - 1));
 					break;
 				}
